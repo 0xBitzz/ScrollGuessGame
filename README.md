@@ -12,7 +12,7 @@ Reward: If the player's guess matches the randomly generated number, they receiv
 ## Getting Started
 
 To interact with the ScrollGuessGame contract:
-- Visit #todo
+- Visit [Scroll Guess Game](https://scroll-guess-game.vercel.app/)
 - Connect your EVM-compatible wallet.
 - Switch to the Scroll Sepolia network.
 - Interact with the contract.
@@ -22,7 +22,7 @@ To interact with the ScrollGuessGame contract:
 - Contract Address: 0x780A53e13dcda56DEBce245E60645a8e59CDA993
 
 
-Usage
+## Usage
 - Placing a Bet
 
   Send exactly 0.01 Ether to the contract address.

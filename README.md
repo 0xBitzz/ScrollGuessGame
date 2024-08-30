@@ -1,7 +1,7 @@
 # ScrollGuessGame
 ## Overview
 
-This project contains a Solidity smart contract named ScrollGuessGame deployed on the [Scroll Sepolia network](https://sepolia.scrollscan.com//address/0x780A53e13dcda56DEBce245E60645a8e59CDA993#code). ScrollGuessGame is a simple game contract where players can guess a number between 1 and 10. If their guess matches a randomly generated number, they win double the amount they bet. Otherwise, their bet is credited to the contract.
+This project contains a Solidity smart contract named ScrollGuessGame deployed on the [Open Campus Codex Sepolia network](https://opencampus-codex.blockscout.com/address/0x810100689e2ef9fd4C4645E6c8C9da9e675AEAf5). ScrollGuessGame is a simple game contract where players can guess a number between 1 and 10. If their guess matches a randomly generated number, they win double the amount they bet. Otherwise, their bet is credited to the contract.
 
 ## Features
 
@@ -19,7 +19,7 @@ To interact with the ScrollGuessGame contract:
 
 ## Contract Details
 
-- Contract Address: 0x780A53e13dcda56DEBce245E60645a8e59CDA993
+- Contract Address: 0x810100689e2ef9fd4C4645E6c8C9da9e675AEAf5
 
 
 ## Usage

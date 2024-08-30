@@ -57,7 +57,7 @@ const Game = ({ id, setError, setLoading, clear }: any) => {
       console.log({ e });
       setError(e?.reason || e?.message || "Something went wrong. Try again.");
       // Once the purchase is complete, clear the loading state
-    } 
+    }
   };
 
 
@@ -180,7 +180,7 @@ const Game = ({ id, setError, setLoading, clear }: any) => {
         {
           randomNumber > 0 ? `Random Number is ${randomNumber}` : ""
         }
-        
+
       </div>
     </div>
   );

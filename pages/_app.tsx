@@ -27,31 +27,56 @@ import Layout from "../components/Layout";
 import { ToastContainer } from "react-toastify";
 
 import { publicProvider } from "wagmi/providers/public";
-const okpoko: Chain = {
-    id: 534351,
-    name: "Scroll Sepolia Testnet",
-    network: "Scroll Sepolia Testnet",
+const EduChain: Chain = {
+    id: 656476,
+    name: "Open Campus Codex Sepolia",
+    network: "Open Campus Codex Sepolia",
     iconUrl: "https://example.com/icon.svg",
     iconBackground: "#fff",
     nativeCurrency: {
         decimals: 18,
-        name: "ETHEREUM",
-        symbol: "ETH",
+        name: "EDU",
+        symbol: "EDU",
     },
     rpcUrls: {
-        public: { http: ["https://scroll-sepolia.blockpi.network/v1/rpc/public"] },
-        default: { http: ["https://scroll-sepolia.blockpi.network/v1/rpc/public"] },
+        public: { http: ["https://open-campus-codex-sepolia.drpc.org"] },
+        default: { http: ["https://open-campus-codex-sepolia.drpc.org"] },
     },
     blockExplorers: {
       default: {
-        name: "Scrollscan",
-        url: "https://sepolia.scrollscan.com"
+        name: "Blockscout",
+        url: "https://opencampus-codex.blockscout.com"
       }
     },
-  
+
     testnet: true,
 };
-const { provider, chains } = configureChains([okpoko], [publicProvider()]);
+const { provider, chains } = configureChains([EduChain], [publicProvider()]);
+// const okpoko: Chain = {
+//     id: 534351,
+//     name: "Scroll Sepolia Testnet",
+//     network: "Scroll Sepolia Testnet",
+//     iconUrl: "https://example.com/icon.svg",
+//     iconBackground: "#fff",
+//     nativeCurrency: {
+//         decimals: 18,
+//         name: "ETHEREUM",
+//         symbol: "ETH",
+//     },
+//     rpcUrls: {
+//         public: { http: ["https://scroll-sepolia.blockpi.network/v1/rpc/public"] },
+//         default: { http: ["https://scroll-sepolia.blockpi.network/v1/rpc/public"] },
+//     },
+//     blockExplorers: {
+//       default: {
+//         name: "Scrollscan",
+//         url: "https://sepolia.scrollscan.com"
+//       }
+//     },
+
+//     testnet: true,
+// };
+// const { provider, chains } = configureChains([okpoko], [publicProvider()]);
 
 
 const { connectors } = getDefaultWallets({

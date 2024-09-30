@@ -6,20 +6,36 @@ import { useEffect, useState } from "react";
 import { useAccount, useBalance } from "wagmi";
 import Link from "next/link";
 
+import { Network, Alchemy } from "alchemy-sdk";
+import { formatEther } from "ethers/lib/utils.js";
+
+// Optional Config object, but defaults to demo api-key and eth-mainnet.
+const settings = {
+  apiKey: 'qW1Wvad8_6LsKyK6hHQy_4x3jSH9Sp6j', // Replace with your Alchemy API Key.
+  network: Network.ETH_MAINNET, // Replace with your network.
+};
+
+const alchemy = new Alchemy(settings);
+
 export default function Header() {
     // Use the useAccount hook to store the user's address
+    const [ethBalance, setEthBalance] = useState(0);
     const { address, isConnected } = useAccount();
-    const { data: ethBalance } = useBalance({ address, chainId: 534351 });
+    // const { data: ethBalance } = useBalance({ address, chainId: 534351 });
     const [displayBalance, setDisplayBalance] = useState(false);
 
     // If the user is connected and has a balance, display the balance
     useEffect(() => {
-        if (isConnected && ethBalance) {
-            setDisplayBalance(true);
-            return;
-        }
-        setDisplayBalance(false);
-    }, [ethBalance, isConnected]);
+      const getEthBalance = async () => {
+        let balance = await alchemy.core.getBalance(address?.toString(), 'latest');
+        balance = formatEther(balance);
+        const mainBal = parseFloat(balance).toFixed(4);
+        setEthBalance(mainBal);
+        console.log(mainBal);
+        console.log(`Balance of ${address}: ${balance} ETH`);
+      }
+      getEthBalance()
+    }, []);
 
     return (
         <Disclosure as="nav" className="">
@@ -50,18 +66,16 @@ export default function Header() {
                                 </div>
                             </div>
                             <div className="flex items-center">
-                                
+
                                 <div>
-                                    {displayBalance && (
                                         <span
                                             className="inline-block text-dark ml-4 px-6 py-2.5 font-medium text-md leading-tight rounded-2xl shadow-none "
                                             data-bs-toggle="modal"
                                             data-bs-target="#exampleModalCenter"
                                         >
-                                            Balance: {Number(ethBalance?.formatted || 0).toFixed(2)}{" "}
-                                            ETH
+                                            {/* Balance: {Number(ethBalance?.formatted || 0).toFixed(2)}{" "} */}
+                                            ETH Balance : {0 || ethBalance}
                                         </span>
-                                    )}
                                 </div>
 
                                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">

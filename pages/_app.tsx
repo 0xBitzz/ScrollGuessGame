@@ -52,32 +52,6 @@ const EduChain: Chain = {
     testnet: true,
 };
 const { provider, chains } = configureChains([EduChain], [publicProvider()]);
-// const okpoko: Chain = {
-//     id: 534351,
-//     name: "Scroll Sepolia Testnet",
-//     network: "Scroll Sepolia Testnet",
-//     iconUrl: "https://example.com/icon.svg",
-//     iconBackground: "#fff",
-//     nativeCurrency: {
-//         decimals: 18,
-//         name: "ETHEREUM",
-//         symbol: "ETH",
-//     },
-//     rpcUrls: {
-//         public: { http: ["https://scroll-sepolia.blockpi.network/v1/rpc/public"] },
-//         default: { http: ["https://scroll-sepolia.blockpi.network/v1/rpc/public"] },
-//     },
-//     blockExplorers: {
-//       default: {
-//         name: "Scrollscan",
-//         url: "https://sepolia.scrollscan.com"
-//       }
-//     },
-
-//     testnet: true,
-// };
-// const { provider, chains } = configureChains([okpoko], [publicProvider()]);
-
 
 const { connectors } = getDefaultWallets({
     appName: "Guessy",

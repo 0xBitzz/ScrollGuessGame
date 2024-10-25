@@ -14,7 +14,7 @@ Reward: If the player's guess matches the randomly generated number, they receiv
 To interact with the ScrollGuessGame contract:
 - Visit [Scroll Guess Game](https://scroll-guess-game.vercel.app/)
 - Connect your EVM-compatible wallet.
-- Switch to the Scroll Sepolia network.
+- Switch to the Open Campus Codex Sepolia.
 - Interact with the contract.
 
 ## Contract Details

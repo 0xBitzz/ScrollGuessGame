@@ -27,31 +27,37 @@ import Layout from "../components/Layout";
 import { ToastContainer } from "react-toastify";
 
 import { publicProvider } from "wagmi/providers/public";
-const EduChain: Chain = {
-    id: 656476,
-    name: "Open Campus Codex Sepolia",
-    network: "Open Campus Codex Sepolia",
+
+const scrollSepolia: Chain = {
+    id: 534351,
+    name: "Scroll Sepolia Testnet",
+    network: "Scroll Sepolia Testnet",
     iconUrl: "https://example.com/icon.svg",
     iconBackground: "#fff",
     nativeCurrency: {
         decimals: 18,
-        name: "EDU",
-        symbol: "EDU",
+        name: "ETHEREUM",
+        symbol: "ETH",
     },
     rpcUrls: {
-        public: { http: ["https://open-campus-codex-sepolia.drpc.org"] },
-        default: { http: ["https://open-campus-codex-sepolia.drpc.org"] },
+      public: { http: ["https://scroll-sepolia.g.alchemy.com/v2/qW1Wvad8_6LsKyK6hHQy_4x3jSH9Sp6j"] },
+      default: { http: ["https://scroll-sepolia.g.alchemy.com/v2/qW1Wvad8_6LsKyK6hHQy_4x3jSH9Sp6j"] },
     },
     blockExplorers: {
       default: {
-        name: "Blockscout",
-        url: "https://opencampus-codex.blockscout.com"
+        name: "Scrollscan",
+        url: "https://sepolia.scrollscan.com"
       }
     },
 
     testnet: true,
 };
+<<<<<<< HEAD
 const { provider, chains } = configureChains([EduChain], [publicProvider()]);
+=======
+const { provider, chains } = configureChains([scrollSepolia], [publicProvider()]);
+
+>>>>>>> 355b036704a76f29ba67a04473e3503cff773ff2
 
 const { connectors } = getDefaultWallets({
     appName: "Guessy",
